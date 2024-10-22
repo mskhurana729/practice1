@@ -1,4 +1,110 @@
+<!--  -->
+<!--Styling Basics  -->
 <!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Styling basics: Task 1</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+        width: 500px;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      li {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+      }
+      button {
+        padding: 5px;
+        font: bold 0.9em sans-serif;
+        border: 2px solid #333;
+
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover,
+      button:focus {
+        background: #000;
+        color: #fff;
+      }
+      input {
+        font: 1.4em/1.5em sans-serif;
+        padding: 0 10px;
+        margin: 0;
+        width: 80%;
+        background: none;
+      }
+      input:focus {
+        background: rgb(0 0 0 /10%);
+        border-radius: 5px;
+      }
+      label {
+        font: 1.1em sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <h2>Edit your preferences</h2>
+      <ul>
+        <li>
+          <label for="e-mail">Email:</label>
+          <input type="email" id="e-mail" name="e-mail" />
+        </li>
+        <li>
+          <label for="website">Website:</label>
+          <input type="url" id="website" name="website" />
+        </li>
+        <li>
+          <label for="phone">Phone number:</label>
+          <input type="tel" id="phone" name="phone" />
+        </li>
+        <li>
+          <label for="food">Favorite food:</label>
+          <select name="food" id="food">
+            <option>Salad</option>
+            <option>Curry</option>
+            <option>Pizza</option>
+            <option>Fajitas</option>
+          </select>
+        </li>
+        <li>
+          <button>Update preferences</button>
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
+<!--  -->
+<!-- Fancy Looking Postcard -->
+<!-- <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -119,7 +225,8 @@
       </div>
     </form>
   </body>
-</html>
+</html> -->
+<!--  -->
 <!-- Autocomplete Box -->
 <!-- <!DOCTYPE html>
 <html lang="en-US">
@@ -165,6 +272,7 @@
     </form>
   </body>
 </html> -->
+<!--  -->
 <!-- Drop-Down Menu -->
 <!-- <!DOCTYPE html>
 <html lang="en-US">
