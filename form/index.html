@@ -1,6 +1,59 @@
+<html>
+  <style>
+    input[type="checkbox"] {
+      appearance: none;
+      position: relative;
+      width: 1em;
+      height: 1em;
+      border: 1px solid gray;
+      vertical-align: -2px;
+      color: green;
+    }
+    input[type="checkbox"]::before {
+      content: "✔";
+      position: absolute;
+      font-size: 1.2em;
+      right: -1px;
+      top: -0.3em;
+      visibility: hidden;
+    }
+    input[type="checkbox"]:checked::before {
+      visibility: visible;
+    }
+    input[type="checkbox"]:disabled {
+      border-color: black;
+      background: #ddd;
+      color: gray;
+    }
+  </style>
+  <form>
+    <fieldset>
+      <legend>Fruit preferences</legend>
+
+      <p>
+        <label>
+          <input type="checkbox" name="fruit" value="cherry" />
+          I like cherry
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="fruit" value="banana" disabled />
+          I can't like banana
+        </label>
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" name="fruit" value="strawberry" />
+          I like strawberry
+        </label>
+      </p>
+    </fieldset>
+  </form>
+</html>
 <!--  -->
 <!--Styling Basics  -->
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
@@ -101,7 +154,7 @@
       </ul>
     </form>
   </body>
-</html>
+</html> -->
 <!--  -->
 <!-- Fancy Looking Postcard -->
 <!-- <!DOCTYPE html>
