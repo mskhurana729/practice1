@@ -1,3 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>:enabled and :disabled demo — shipping form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Josefin Sans", sans-serif;
+        margin: 20px auto;
+        max-width: 460px;
+      }
+
+      fieldset {
+        padding: 10px 30px 0;
+        margin-bottom: 20px;
+      }
+
+      legend {
+        color: white;
+        background: black;
+        padding: 5px 10px;
+      }
+
+      fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+      }
+
+      button,
+      label,
+      input[type="text"] {
+        display: block;
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 5px;
+        height: 30px;
+      }
+
+      input {
+        box-shadow: inset 1px 1px 3px #ccc;
+        border-radius: 5px;
+      }
+
+      input:hover,
+      input:focus {
+        background-color: #eee;
+      }
+      input[type="text"]:disabled {
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+      label:has(+ :disabled) {
+        color: #aaa;
+      }
+      button {
+        width: 60%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset id="shipping">
+        <legend>Shipping address</legend>
+        <div>
+          <label for="name1">Name: </label>
+          <input id="name1" name="name1" type="text" required />
+        </div>
+        <div>
+          <label for="address1">Address: </label>
+          <input id="address1" name="address1" type="text" required />
+        </div>
+        <div>
+          <label for="pcode1">Zip/postal code: </label>
+          <input id="pcode1" name="pcode1" type="text" required />
+        </div>
+      </fieldset>
+      <fieldset id="billing">
+        <legend>Billing address</legend>
+        <div>
+          <label for="billing-checkbox">Same as shipping address:</label>
+          <input type="checkbox" id="billing-checkbox" checked />
+        </div>
+        <div>
+          <label for="name" class="billing-label">Name: </label>
+          <input id="name" name="name" type="text" disabled required />
+        </div>
+        <div>
+          <label for="address2" class="billing-label">Address: </label>
+          <input id="address2" name="address2" type="text" disabled required />
+        </div>
+        <div>
+          <label for="pcode2" class="billing-label">Zip/postal code: </label>
+          <input id="pcode2" name="pcode2" type="text" disabled required />
+        </div>
+      </fieldset>
+
+      <div><button>Submit</button></div>
+    </form>
+
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          document
+            .querySelector("#billing-checkbox")
+            .addEventListener("change", toggleBilling);
+        },
+        false
+      );
+      function toggleBilling() {
+        let billingItems = document.querySelectorAll(
+          '#billing input[type="text"]'
+        );
+        for (let i = 0; i < billingItems.length; i++) {
+          console.log(billingItems[i]);
+          billingItems[i].disabled = !billingItems[i].disabled;
+        }
+      }
+    </script>
+  </body>
+</html>
+<!-- VALID-INVALID FORM CONTROLS DESIGNED USING GENERATED CONTENT
+ <!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>:valid and :invalid example</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "josefin sans", sans-serif;
+        margin: 40px auto;
+        max-width: 460px;
+      }
+      fieldset {
+        padding: 10px 30px 0;
+      }
+      legend {
+        color: white;
+        background-color: black;
+        padding: 5px;
+      }
+      fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: row wrap;
+      }
+      input,
+      label,
+      button {
+        display: block;
+        font-family: inherit;
+        width: 100%;
+        padding: 5px;
+        font-size: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        height: 30px;
+      }
+      input {
+        box-shadow: inset 1px 1px 3px #ccc;
+        border-radius: 5px;
+      }
+      input:hover,
+      input:focus {
+        background-color: #eee;
+      }
+
+      input + span {
+        position: relative;
+      }
+      input:required + span::after {
+        position: absolute;
+        content: "Required";
+        font-size: 0.7rem;
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        top: -26px;
+        left: -70px;
+      }
+      input + span::before {
+        position: absolute;
+        content: " ";
+        top: 5px;
+        left: 5px;
+      }
+      input:invalid {
+        border: 2px solid red;
+      }
+
+      input:invalid + span::before {
+        content: "✖";
+        color: red;
+      }
+      input:valid + span::before {
+        content: "✓";
+        color: green;
+      }
+      input:valid {
+        border: 2px solid green;
+      }
+      button {
+        width: 60%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Feedback form</legend>
+
+        <p>Required fields are labelled with "required".</p>
+        <div>
+          <label for="fname">First name: </label>
+          <input id="fname" name="fname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="lname">Last name: </label>
+          <input id="lname" name="lname" type="text" required />
+          <span></span>
+        </div>
+        <div>
+          <label for="email"
+            >Email address (include if you want a response):
+          </label>
+          <input id="email" name="email" type="email" />
+          <span></span>
+        </div>
+        <div><button>Submit</button></div>
+      </fieldset>
+    </form>
+  </body>
+</html> -->
 <!--  -->
 <!-- CUSTOM DESIGN FOR RADIO BUTTONS IN INDETERMINATE STATE
  <!DOCTYPE html>
@@ -156,8 +409,8 @@
   </body>
 </html> -->
 <!--  -->
-<!-- Custom file picker design -->
-<!-- <!DOCTYPE html>
+<!-- Custom file picker design
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
