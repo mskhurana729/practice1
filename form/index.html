@@ -1,3 +1,84 @@
+<!-- CUSTOM DESIGN FOR RADIO BUTTONS WHEN THEY GET CHECKED<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Advanced styling: Task 2</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em /1.4 "josefin sans" "Helvetica Neue", Helvetica, Arial,
+          sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button,
+      input,
+      select {
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      label {
+        font-size: 1.4rem;
+      }
+      input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        border: 2px solid gray;
+        border-radius: 10px;
+        vertical-align: -2px;
+        outline: none;
+      }
+      input[type="radio"]::before {
+        display: block;
+        content: " ";
+        height: 10px;
+        width: 10px;
+        border-radius: 6px;
+        background-color: red;
+        font-size: 1.4em;
+        transform: translate(3px, 3px) scale(0);
+        transform-origin: center;
+        transition: all 0.3s ease-in;
+      }
+      input[type="radio"]:checked::before {
+        transform: translate(3px, 3px) scale(1);
+        transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Who is your favorite pony?</legend>
+        <ul>
+          <li>
+            <label for="pinkie">Pinkie Pie</label>
+            <input type="radio" id="pinkie" name="pony" value="pinkie" />
+          </li>
+          <li>
+            <label for="rainbow">Rainbow Dash</label>
+            <input type="radio" id="rainbow" name="pony" value="rainbow" />
+          </li>
+          <li>
+            <label for="twilight">Twilight Sparkle</label>
+            <input type="radio" id="twilight" name="pony" value="twilight" />
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+</html> -->
 <!--  -->
 <!--SEARCH INPUT AS CONSISTENT AS POSSIBLE ACROSS BROWSERS
 <!DOCTYPE html>
