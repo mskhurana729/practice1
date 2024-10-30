@@ -1,4 +1,29 @@
-<!-- <!DOCTYPE html>
+<!-- VALIDATION WITH JS using .setCustomValidity()
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VALIDATION WITH JAVASCRIPT</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+    </form>
+  </body>
+  <script>
+    const nameInput = document.querySelector('[name="name"]');
+    nameInput.addEventListener("invalid", (e) => {
+      nameInput.setCustomValidity("Please Enter Your Name, It's required");
+    });
+  </script>
+</html> -->
+<!--  -->
+<!--  CREATE A FORM FOR SPEAKER SUBMISSION
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
