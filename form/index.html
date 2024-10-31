@@ -1,3 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input
+              required
+              minlength="10"
+              type="text"
+              id="name"
+              name="name"
+              aria-describedby="name-validation"
+            />
+            <span
+              id="name-validation"
+              aria-live="assertive"
+              class="validation-message"
+            ></span>
+          </div>
+          <button>Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script>
+    // we want to create an event listener which will show form control validation live which means when user unfocus that control it should show whether its valid or invalid and according to that it show its error message
+    //steps
+    // create an event on document of blur
+    //check if the targeted element was valid and store it in isValid
+    //store validation message in message variable
+    //store aria-describedBy attribute of target element in connectedValidationId
+    //if the value of connectedValidationId is true store it in connectedValidation and if false store false.
+    //check if connectedValidation and message and !isValid are all true then assign message to connectedValidation.innerText
+    //ELSE assign an empty string to connectedValidation.innerText
+    document.addEventListener(
+      "blur",
+      (e) => {
+        console.log("Hello");
+        const isValid = e.target.validity.valid;
+        const message = e.target.validationMessage;
+        const connectedValidationId = e.target.getAttribute("aria-describedby");
+        const connectedValidation = connectedValidationId
+          ? document.getElementById(connectedValidationId)
+          : false;
+        console.log(isValid, message, connectedValidation);
+        if (connectedValidation && !isValid && message) {
+          connectedValidation.innerText = message;
+        } else {
+          connectedValidation.innerText = "";
+        }
+      },
+      true
+    );
+  </script>
+</html>
+
+<!--  -->
 <!-- VALIDATION WITH JS using .setCustomValidity()
  <!DOCTYPE html>
 <html lang="en">
