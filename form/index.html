@@ -1,3 +1,66 @@
+<!-- CUSTOM STYLE FOR RADIO AND CHECKBOXES
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="radio"],
+      input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+      }
+      input[type="radio"] + label::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        border: 1px solid black;
+        display: inline-block;
+        border-radius: 50%;
+        margin-inline-end: 0.5em;
+      }
+      input[type="checkbox"] + label::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        border: 1px solid black;
+        display: inline-block;
+        /* border-radius: 50%; */
+        margin-inline-end: 0.5em;
+      }
+      input[type="radio"]:checked + label::before {
+        background: black;
+      }
+      input[type="checkbox"]:checked + label::before {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <input type="checkbox" name="subscribe" id="subscribe" />
+            <label for="subscribe">Subscribe to web.dev</label>
+          </div>
+          <div>
+            <fieldset>
+              <legend>What is your favorite web technology</legend>
+              <input type="radio" name="webfeature" value="html" id="html" />
+              <label for="html">HTML</label>
+
+              <input type="radio" name="webfeature" value="css" id="css" />
+              <label for="css">CSS</label>
+            </fieldset>
+          </div>
+          <button>Save answer</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html> -->
 <!--  -->
 <!-- CUSTOM STYLE FOR SELECT ELEMENT -->
 <!--  -->
