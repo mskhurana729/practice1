@@ -1,3 +1,124 @@
+<!-- SHOW ADDITIONAL FORM FIELD FOR SPECIFIC SELECTION<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        margin-top: 1rem;
+      }
+
+      input {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <fieldset>
+              <legend>What is your favorite web technology?</legend>
+              <input
+                type="radio"
+                name="webfeature"
+                value="html"
+                id="html"
+                class="radioField"
+                data-controls="html-additional"
+              />
+              <label for="html">HTML</label>
+              <div class="additional" id="html-additional">
+                <label for="html-element"
+                  >What is your favorite HTML element?</label
+                >
+                <input type="text" id="html-element" name="html-element" />
+              </div>
+              <input
+                type="radio"
+                name="webfeature"
+                value="css"
+                id="css"
+                class="radioField"
+                data-controls="css-additional"
+              />
+              <label for="css">CSS</label>
+              <div class="additional" id="css-additional">
+                <label for="css-property"
+                  >What is your favorite CSS property?</label
+                >
+                <input type="text" id="css-property" name="css-property" />
+              </div>
+            </fieldset>
+          </div>
+          <button>Save</button>
+        </form>
+      </div>
+    </main>
+     <script>
+      const additionalFields = document.querySelectorAll(".additional");
+      // console.log(additionalFields);
+      const radioFields = document.querySelectorAll(".radioField");
+      // console.log(radioFields);
+      if (additionalFields && additionalFields.length > 0) {
+        [...additionalFields].forEach((additionalField) => {
+          additionalField.hidden = true;
+        });
+      }
+      if (radioFields && radioFields.length > 0) {
+        [...radioFields].forEach((radioField) => {
+          radioField.setAttribute("aria-expanded", false);
+          radioField.setAttribute("aria-controls", radioField.dataset.controls);
+          radioField.addEventListener("click", (e) => {
+            const additionalField = document.getElementById(
+              e.target.getAttribute("aria-controls")
+            );
+            let isChecked = e.target.checked;
+
+            [...additionalFields].forEach((additionalField) => {
+              additionalField.hidden = true;
+            });
+
+            if (isChecked) {
+              e.target.setAttribute("aria-expanded", true);
+              additionalField.hidden = false;
+            } else {
+              e.target.setAttribute("aria-expanded", false);
+              additionalField.hidden = true;
+            }
+          });
+        });
+      }
+    </script>
+    <script>
+      //first we will hide all the additional class elements
+      //we want to create an event listener which will be on radio buttons when one of them get clicked we will check which one is clicked and then we will show additional class div which includes another text input and will change it property of hidden to do this
+      const additionalFields = document.querySelectorAll(".additional");
+      //   console.log([...additionalFields]);
+      [...additionalFields].forEach((additionalField) => {
+        additionalField.hidden = true;
+      });
+
+      const radioFields = document.querySelectorAll(".radioField");
+      [...radioFields].forEach((radioField) => {
+        radioField.addEventListener("click", (e) => {
+          let isChecked = e.target.checked;
+          [...additionalFields].forEach((additionalField) => {
+            additionalField.hidden = true;
+          });
+          if (isChecked) {
+            document.getElementById(e.target.dataset.controls).hidden = false;
+          } else {
+            document.getElementById(e.target.dataset.controls).hidden = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html> -->
+<!--  -->
 <!-- CUSTOM STYLE FOR RADIO AND CHECKBOXES
  <!DOCTYPE html>
 <html lang="en">
