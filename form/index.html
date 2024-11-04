@@ -1,3 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <form>
+          <div>
+            <label for="password">Password</label>
+            <input
+              required
+              type="password"
+              id="password"
+              name="password"
+              class="password-field"
+            />
+            <button
+              type="button"
+              hidden
+              data-pressed="false"
+              class="reveal-password"
+              aria-controls="password"
+              data-text-show="Show password"
+              data-text-hide="Hide password"
+            >
+              Show password
+            </button>
+            <span
+              data-text-shown="Your password is shown"
+              data-text-hidden="Your password is hidden"
+              class="visually-hidden password-announce"
+              aria-live="polite"
+            ></span>
+          </div>
+          <button>Save</button>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script>
+    //we want to create a button which will change the type of password input to type and also change it back and while doing it will change its innerText as well.
+    const passwordField = document.querySelector(".password-field");
+    const revealPassword = document.querySelector(".reveal-password");
+    passwordField.addEventListener("input", (e) => {
+      revealPassword.hidden = false;
+    });
+    revealPassword.addEventListener("click", (e) => {
+      console.log(revealPassword.dataset.pressed);
+      let isPressed = revealPassword.getAttribute("data-pressed") === "true";
+      console.log(isPressed);
+      if (isPressed) {
+        //if revealpassword is true which means input is showing the password than we want to change its dataset-pressed value to false and we want to change its innerText to dataset-text-show and passwordField.type to password and vise versa if false
+        revealPassword.innerText = revealPassword.dataset.textShow;
+        passwordField.type = "password";
+        console.log(passwordField);
+      } else {
+        revealPassword.innerText = revealPassword.dataset.textHide;
+        passwordField.type = "text";
+      }
+      revealPassword.setAttribute("data-pressed", String(!isPressed));
+      console.log(revealPassword.dataset.pressed);
+    });
+  </script>
+  <!-- <script>
+    const revealPassword = document.querySelector(".reveal-password");
+    const passwordField = document.querySelector(".password-field");
+    const passwordAnnounce = document.querySelector(".password-announce");
+    if (revealPassword && passwordField && passwordAnnounce) {
+      revealPassword.hidden = false;
+      passwordField.classList.add("has-js");
+      revealPassword.addEventListener("click", (e) => {
+        let isPressed = revealPassword.getAttribute("data-pressed") === "true";
+        if (isPressed) {
+          passwordField.type = "password";
+          revealPassword.innerText = revealPassword.dataset.textShow;
+        } else {
+          passwordField.type = "text";
+          revealPassword.innerText = revealPassword.dataset.textHide;
+          passwordAnnounce.innerText = passwordAnnounce.dataset.textShown;
+        }
+        revealPassword.setAttribute("data-pressed", String(!isPressed));
+      });
+    }
+  </script> -->
+</html>
 <!-- SHOW ADDITIONAL FORM FIELD FOR SPECIFIC SELECTION<!DOCTYPE html>
 <html lang="en">
   <head>
