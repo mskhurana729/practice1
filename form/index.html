@@ -1,4 +1,171 @@
-<!DOCTYPE html>
+<!--  -->
+<!-- IDENTITY FORM
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDENTITY <FORM></FORM></title>
+    <style>
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+        border: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      button {
+        margin-top: 1rem;
+      }
+
+      .has-js::-ms-reveal {
+        display: none;
+      }
+
+      .has-js::reveal {
+        display: none;
+      }
+
+      .reveal-password {
+        color: white;
+        padding: 0.2em 1em;
+        text-transform: capitalize;
+        border: none;
+        background: #555;
+        border-radius: 0;
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        margin-top: 0;
+        padding: 5px 10px;
+        color: white;
+
+        font-size: 1.2rem;
+        border-radius: 5px;
+      }
+      .reveal-password::before {
+        content: attr(data-text-show);
+        grid-area: 1/1;
+        height: 0px;
+        visibility: hidden;
+      }
+      .submit {
+        margin-top: 2rem;
+        padding: 5px 10px;
+        color: white;
+        background-color: rgb(96, 180, 248);
+        font-size: 1.2rem;
+        border-radius: 5px;
+      }
+      input {
+        border: 1px solid;
+        padding: 0.3em;
+      }
+      label {
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+      a {
+        display: block;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" autocomplete="email" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            required
+            minlength="8"
+            id="password"
+            name="password"
+            aria-describedby="password-minlength"
+            autocomplete="current-password"
+            class="password-field"
+          />
+          <button
+            type="button"
+            hidden
+            data-pressed="false"
+            class="reveal-password"
+            aria-controls="password"
+            data-text-show="Show Password"
+            data-text-hide="Hide password"
+          >
+            Show Password
+          </button>
+          <span
+            data-text-shown="Your Password is shown"
+            data-text-hidden="Your password is hidden"
+            class="visually-hidden password password-announce"
+            aria-live="polite"
+          >
+          </span>
+        </div>
+        <div><a href="./updatePassword.html">Forgot Password</a></div>
+        <button class="submit">Sign in</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    // const formElement = document.querySelector("form");
+    // if (formElement) {
+    //   formElement.addEventListener("submit", (e) => {
+    //     const formData = new FormData();
+    //     fetch("https://jsonplaceholder.typicode.com/posts", {
+    //       method: "POST",
+    //       body: formData,
+    //     })
+    //       .then(response.json())
+    //       .then((result) => {
+    //         console.log("Success:", result);
+    //       })
+    //       .catch((error) => {
+    //         console.error("Error:", error);
+    //       });
+    //     e.preventDefault();
+    //   });
+    // }
+    // console.log("Hello");
+    // const revealPassword = document.querySelector(".reveal-password");
+    // const passwordField = document.querySelector(".password-field");
+    // const passwordAnnounce = document.querySelector(".password-announce");
+    // if (revealPassword && passwordAnnounce && passwordField) {
+    //   passwordField.classList.add("has-js");
+    //   console.log("HEllo");
+    //   revealPassword.addEventListener("click", (e) => {
+    //     let isPressed = revealPassword.getAttribute("data-pressed") === "true";
+    //     if (isPressed) {
+    //       passwordField.type = "password";
+    //       revealPassword.innerText = revealPassword.dataset.textShow;
+    //       passwordAnnounce.innerText = passwordAnnounce.dataset.textHidden;
+    //     } else {
+    //       passwordField.type = "text";
+    //       revealPassword.innerText = revealPassword.dataset.textHide;
+    //       passwordAnnounce.innerText = passwordAnnounce.dataset.textShown;
+    //     }
+    //     revealPassword.setAttribute("data-pressed", String(!isPressed));
+    //   });
+    // }
+  </script>
+</html> -->
+<!--  -->
+<!-- SHOW/HIDE PASSWORD BUTTON<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -40,53 +207,54 @@
         </form>
       </div>
     </main>
-  </body>
-  <script>
+   </body>
+   <script>
     //we want to create a button which will change the type of password input to type and also change it back and while doing it will change its innerText as well.
-    const passwordField = document.querySelector(".password-field");
-    const revealPassword = document.querySelector(".reveal-password");
-    passwordField.addEventListener("input", (e) => {
-      revealPassword.hidden = false;
-    });
-    revealPassword.addEventListener("click", (e) => {
-      console.log(revealPassword.dataset.pressed);
-      let isPressed = revealPassword.getAttribute("data-pressed") === "true";
-      console.log(isPressed);
-      if (isPressed) {
-        //if revealpassword is true which means input is showing the password than we want to change its dataset-pressed value to false and we want to change its innerText to dataset-text-show and passwordField.type to password and vise versa if false
-        revealPassword.innerText = revealPassword.dataset.textShow;
-        passwordField.type = "password";
-        console.log(passwordField);
-      } else {
-        revealPassword.innerText = revealPassword.dataset.textHide;
-        passwordField.type = "text";
-      }
-      revealPassword.setAttribute("data-pressed", String(!isPressed));
-      console.log(revealPassword.dataset.pressed);
-    });
+    // const passwordField = document.querySelector(".password-field");
+    // const revealPassword = document.querySelector(".reveal-password");
+    // passwordField.addEventListener("input", (e) => {
+    //   revealPassword.hidden = false;
+    // });
+    // revealPassword.addEventListener("click", (e) => {
+    //   console.log(revealPassword.dataset.pressed);
+    //   let isPressed = revealPassword.getAttribute("data-pressed") === "true";
+    //   console.log(isPressed);
+    //   if (isPressed) {
+        //if reveal password is true which means input is showing the password than we want to change its dataset-pressed value to false and we want to change its innerText to dataset-text-show and passwordField.type to password and vise versa if false
+    //     revealPassword.innerText = revealPassword.dataset.textShow;
+    //     passwordField.type = "password";
+    //     console.log(passwordField);
+    //   } else {
+    //     revealPassword.innerText = revealPassword.dataset.textHide;
+    //     passwordField.type = "text";
+    //   }
+    //   revealPassword.setAttribute("data-pressed", String(!isPressed));
+    //   console.log(revealPassword.dataset.pressed);
+    // });
   </script>
-  <!-- <script>
-    const revealPassword = document.querySelector(".reveal-password");
-    const passwordField = document.querySelector(".password-field");
-    const passwordAnnounce = document.querySelector(".password-announce");
-    if (revealPassword && passwordField && passwordAnnounce) {
-      revealPassword.hidden = false;
-      passwordField.classList.add("has-js");
-      revealPassword.addEventListener("click", (e) => {
-        let isPressed = revealPassword.getAttribute("data-pressed") === "true";
-        if (isPressed) {
-          passwordField.type = "password";
-          revealPassword.innerText = revealPassword.dataset.textShow;
-        } else {
-          passwordField.type = "text";
-          revealPassword.innerText = revealPassword.dataset.textHide;
-          passwordAnnounce.innerText = passwordAnnounce.dataset.textShown;
-        }
-        revealPassword.setAttribute("data-pressed", String(!isPressed));
-      });
-    }
-  </script> -->
-</html>
+  <script>
+    // const revealPassword = document.querySelector(".reveal-password");
+    // const passwordField = document.querySelector(".password-field");
+    // const passwordAnnounce = document.querySelector(".password-announce");
+    // if (revealPassword && passwordField && passwordAnnounce) {
+    //   revealPassword.hidden = false;
+    //   passwordField.classList.add("has-js");
+    //   revealPassword.addEventListener("click", (e) => {
+    //     let isPressed = revealPassword.getAttribute("data-pressed") === "true";
+    //     if (isPressed) {
+    //       passwordField.type = "password";
+    //       revealPassword.innerText = revealPassword.dataset.textShow;
+    //     } else {
+    //       passwordField.type = "text";
+    //       revealPassword.innerText = revealPassword.dataset.textHide;
+    //       passwordAnnounce.innerText = passwordAnnounce.dataset.textShown;
+    //     }
+    //     revealPassword.setAttribute("data-pressed", String(!isPressed));
+    //   });
+    // }
+  </script>
+</html> -->
+<!--  -->
 <!-- SHOW ADDITIONAL FORM FIELD FOR SPECIFIC SELECTION<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -317,25 +485,25 @@
     //if the value of connectedValidationId is true store it in connectedValidation and if false store false.
     //check if connectedValidation and message and !isValid are all true then assign message to connectedValidation.innerText
     //ELSE assign an empty string to connectedValidation.innerText
-    document.addEventListener(
-      "blur",
-      (e) => {
-        console.log("Hello");
-        const isValid = e.target.validity.valid;
-        const message = e.target.validationMessage;
-        const connectedValidationId = e.target.getAttribute("aria-describedby");
-        const connectedValidation = connectedValidationId
-          ? document.getElementById(connectedValidationId)
-          : false;
-        console.log(isValid, message, connectedValidation);
-        if (connectedValidation && !isValid && message) {
-          connectedValidation.innerText = message;
-        } else {
-          connectedValidation.innerText = "";
-        }
-      },
-      true
-    );
+    //document.addEventListener(
+    //  "blur",
+    //  (e) => {
+    //    console.log("Hello");
+    //    const isValid = e.target.validity.valid;
+    //    const message = e.target.validationMessage;
+    //    const connectedValidationId = e.target.getAttribute("aria-describedby");
+    //    const connectedValidation = connectedValidationId
+    //      ? document.getElementById(connectedValidationId)
+    //      : false;
+    //    console.log(isValid, message, connectedValidation);
+    //    if (connectedValidation && !isValid && message) {
+    //      connectedValidation.innerText = message;
+    //    } else {
+    //      connectedValidation.innerText = "";
+    //    }
+    //  },
+    //  true
+    //);
   </script>
 </html> -->
 <!--  -->
@@ -356,10 +524,10 @@
     </form>
   </body>
   <script>
-    const nameInput = document.querySelector('[name="name"]');
-    nameInput.addEventListener("invalid", (e) => {
-      nameInput.setCustomValidity("Please Enter Your Name, It's required");
-    });
+  //  const nameInput = document.querySelector('[name="name"]');
+    //nameInput.addEventListener("invalid", (e) => {
+      //nameInput.setCustomValidity("Please Enter Your Name, It's required");
+   // });
   </script>
 </html> -->
 <!--  -->
