@@ -1,3 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAYMENT FORM</title>
+    <style>
+      form {
+        width: 90vw;
+        max-width: 20em;
+      }
+
+      button {
+        margin-top: 2rem;
+      }
+
+      input {
+        border: 1px solid;
+        padding: 0.3em;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+      }
+
+      .date-code {
+        display: flex;
+        margin: 0 -1em;
+      }
+
+      .date-code div {
+        margin: 0 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <form action="">
+        <div class="">
+          <label for="name">Name on card</label>
+          <input type="text" name="name" id="name" autocomplete="cc-name" />
+        </div>
+        <div class="card-number">
+          <label for="number">Card number</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            name="card-number"
+            id="card-number"
+            autocomplete="cc-number"
+            pattern="[0-9]+"
+          />
+        </div>
+        <div class="date-code">
+          <label for="expiry-date">Expiry Date</label>
+          <input
+            type="text"
+            name="expiry-date"
+            id="expiry-date"
+            class="expiry-date"
+            autocomplete="cc-exp"
+            placeholder="MM/YY"
+            minlength="4"
+            pattern="[0-9/]+"
+          />
+        </div>
+        <div class="security-code">
+          <label for="security-code">security-code</label>
+          <input
+            type="text"
+            name="security-code"
+            id="security-code"
+            inputmode="numeric"
+            minlength="3"
+            maxlength="4"
+            pattern="[0-9]+"
+            p
+          />
+        </div>
+        <button>Pay $300.00</button>
+      </form>
+    </div>
+  </body>
+</html>
 <!--  -->
 <!-- IDENTITY FORM
  <!DOCTYPE html>
