@@ -1,4 +1,146 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">
+        <p>Odin 1</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 2</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 3</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 4</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 5</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 6</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 7</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 8</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 9</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+      <div class="grid-item">
+        <p>Odin 10</p>
+        <img src="https://i.imgur.com/jkwFqfX.png" alt="top logo" />
+      </div>
+    </div>
+  </body>
+  <style>
+    .grid-container {
+      resize: both;
+      overflow: auto;
+      display: grid;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid grey;
+      background-color: skyblue;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .grid-item {
+      background-color: #444;
+      text-align: center;
+      color: #ddd;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+      padding: 12px;
+    }
+
+    p {
+      margin: 12px auto 24px;
+    }
+
+    img {
+      height: 60px;
+    }
+  </style>
+</html> -->
+<!--PLACE BOXES USING GRID-TEMPLATE-AREAS
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="one">1</div>
+      <div class="two">2</div>
+      <div class="three">3</div>
+      <div class="four">4</div>
+      <div class="five">5</div>
+    </div>
+    <style>
+      body {
+        padding: 50px;
+        font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+
+      .grid {
+        border: 5px solid rgb(111, 41, 97);
+        display: grid;
+        grid-template-areas:
+          "one one two two"
+          "one one two two"
+          "three three four four"
+          "three three four four";
+        gap: 10px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        inline-size: 500px;
+      }
+      .grid > * {
+        background-color: rgba(111, 41, 97, 0.4);
+        border-radius: 5px;
+        padding: 10px;
+      }
+      .one {
+        grid-area: one;
+      }
+      .two {
+        grid-area: two;
+      }
+      .three {
+        grid-area: three;
+      }
+      .four {
+        grid-area: four;
+      }
+      .five {
+        background-color: orange;
+        grid-area: 2/2/4/4;
+      }
+    </style>
+  </body>
+</html> -->
+<!--  PLACE BOXES USING LINE NAMES
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -42,4 +184,4 @@
       }
     </style>
   </body>
-</html>
+</html> -->
