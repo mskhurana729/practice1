@@ -182,42 +182,346 @@
 // console.log(x instanceof Object);
 
 //text-based role playing game
-function Hero(name, level) {
-  this.name = name;
-  this.level = level;
-}
+// function Hero(name, level) {
+//   this.name = name;
+//   this.level = level;
+// }
 
 // let hero1 = new Hero("Bjorn", 1);
 
 // console.log(Object.getPrototypeOf(hero1));
 // console.log(hero1.greet());
 
-function Warrior(name, level, weapon) {
-  Hero.call(this, name, level);
-  this.weapon = weapon;
-}
+// function Warrior(name, level, weapon) {
+//   Hero.call(this, name, level);
+//   this.weapon = weapon;
+// }
 
-function Healer(name, level, spell) {
-  Hero.call(this, name, level);
-  this.spell = spell;
-}
-Object.setPrototypeOf(Warrior.prototype, Hero.prototype);
-Object.setPrototypeOf(Healer.prototype, Hero.prototype);
+// function Healer(name, level, spell) {
+//   Hero.call(this, name, level);
+//   this.spell = spell;
+// }
+// Object.setPrototypeOf(Warrior.prototype, Hero.prototype);
+// Object.setPrototypeOf(Healer.prototype, Hero.prototype);
 
-Hero.prototype.greet = function () {
-  return `${this.name} says hello`;
-};
+// Hero.prototype.greet = function () {
+//   return `${this.name} says hello`;
+// };
 
-Warrior.prototype.attack = function () {
-  return `${this.name} attacks with the ${this.weapon}`;
-};
-Healer.prototype.heal = function () {
-  return `${this.name} casts ${this.spell}.`;
-};
+// Warrior.prototype.attack = function () {
+//   return `${this.name} attacks with the ${this.weapon}`;
+// };
+// Healer.prototype.heal = function () {
+//   return `${this.name} casts ${this.spell}.`;
+// };
 
-const hero1 = new Warrior("Bjorn", 1, "axe");
-const hero2 = new Healer("Kanin", 1, "cure");
+// const hero1 = new Warrior("Bjorn", 1, "axe");
+// const hero2 = new Healer("Kanin", 1, "cure");
 
-console.log(hero1.attack());
+// console.log(hero1.attack());
 
-console.log(hero1.greet());
+// console.log(hero1.greet());
+
+//JAVASCRIPT.INFO
+// PROTOTYPAL INHERITANCE
+
+// let animal = {
+//   eats: true,
+//   walk() {
+//     console.log("Animal walk");
+//   },
+// };
+// let rabbit = {
+//   jumps: true,
+// };
+// // let longEar = {
+// //   earLength: 10,
+// //   __proto__: rabbit,
+// // };
+// // rabbit.__proto__ = animal;
+// // console.log(rabbit.eats);
+// // console.log(rabbit.jumps);
+// //
+// rabbit.walk = function () {
+//   console.log("Rabbit! Bounce-bounce");
+// };
+// rabbit.walk();
+// //
+
+// let user = {
+//   name: "John",
+//   surname: "Smith",
+//   set fullName(value) {
+//     [this.name, this.surname] = value.split(" ");
+//   },
+//   get fullName() {
+//     return `${this.name} ${this.surname}`;
+//   },
+// };
+// let admin = {
+//   __proto__: user,
+//   isAdmin: true,
+// };
+// console.log(admin.fullName);
+// admin.fullName = "Alice cooper";
+// console.log(user.fullName);
+// console.log(admin.fullName);
+
+// let animal = {
+//   walk() {
+//     if (!this.isSleeping) {
+//       console.log("I walk");
+//     }
+//   },
+//   sleep() {
+//     this.isSleeping = true;
+//   },
+// };
+// let rabbit = {
+//   name: "white rabbit",
+//   __proto__: animal,
+// };
+// rabbit.sleep();
+// console.log(rabbit.isSleeping);
+// console.log(animal.isSleeping);
+
+// let animal = {
+//   eats: true,
+// };
+// let rabbit = {
+//   jumps: true,
+//   __proto__: animal,
+// };
+
+// console.log(Object.keys(rabbit));
+// for (let prop in rabbit) console.log(prop);
+
+// let animal = {
+//   eats: true,
+// };
+// let rabbit = {
+//   jumps: true,
+//   __proto__: animal,
+// };
+// for (let prop in rabbit) {
+//   let isOwn = rabbit.hasOwnProperty(prop);
+//   if (isOwn) {
+//     console.log(`Our: ${prop}`);
+//   } else {
+//     console.log(`Inherited: ${prop}`);
+//   }
+// }
+
+// let head = {
+//   glasses: 1,
+// };
+
+// let table = {
+//   pen: 3,
+//   __proto__: head,
+// };
+
+// let bed = {
+//   sheet: 1,
+//   pillow: 2,
+//   __proto__: table,
+// };
+
+// let pockets = {
+//   money: 2000,
+//   __proto__: bed,
+// };
+
+// console.log(pockets.pen);
+// console.log(bed.glasses);
+
+// let hamster = {
+//   stomach: [],
+
+//   eat(food) {
+//     this.stomach = [food];
+//   },
+// };
+
+// let speedy = {
+//   __proto__: hamster,
+// };
+
+// let lazy = {
+//   __proto__: hamster,
+// };
+
+// // This one found the food
+// speedy.eat("apple");
+// console.log(speedy.stomach); // apple
+
+// // This one also has it, why? fix please.
+// console.log(lazy.stomach); // apple
+
+// let counter = {
+//   count: 0,
+//   next: function () {
+//     return ++this.count;
+//   },
+// };
+// counter.next();
+
+// console.log(this === window);
+
+// this.color = "Red";
+// console.log(window.color);
+
+// function show() {
+// console.log(this === window);
+// }
+// show();
+
+// function show() {
+// "use strict";
+// console.log(this === window);
+// function display() {
+// console.log(this === window);
+// }
+// display();
+// }
+// show();
+
+// let car = {
+// brand: "Honda",
+// getBrand: function () {
+// return this.brand;
+// },
+// };
+// console.log(car.getBrand());
+
+// let brand = car.getBrand;
+// let brand = car.getBrand.bind(car);
+// console.log(brand());
+
+// let car = {
+//   brand: "honda",
+//   getBrand: function () {
+//     return this.brand;
+//   },
+// };
+// let bike = {
+//   brand: "Harley davidson",
+//   __proto__: car,
+// };
+// let brand = car.getBrand.bind(bike);
+// console.log(brand());
+// console.log(bike.getBrand());
+
+// function Car(brand) {
+//   // if (this instanceof Car) {
+//   // } same as
+//   if (!new.target) {
+//     throw Error("Must use the new operator to call the function");
+//   }
+//   this.brand = brand;
+// }
+// Car.prototype.getBrand = function () {
+//   return this.brand;
+// };
+// let car = new Car("Honda");
+// console.log(car.getBrand());
+
+// let bmw = Car("bmw");
+// console.log(bmw.brand);
+
+// function getBrand(prefix) {
+//   console.log(prefix + this.brand);
+// }
+// let honda = {
+//   brand: "Honda",
+// };
+// let Audi = {
+//   brand: "Audi",
+// };
+// getBrand.call(honda, `It's a `);
+// getBrand.call(Audi, `It's an `);
+
+// getBrand.apply(honda, [`It's a `]);
+
+// let getThis = () => this;
+// console.log(getThis() === window);
+
+// function Car() {
+//   this.speed = 120;
+// }
+// Car.prototype.getSpeed = () => {
+//   return this.speed;
+// };
+// var car = new Car();
+
+// console.log(car.getSpeed());
+
+// let father = { dfasd: 444 };
+// let son = {};
+
+// Object.setPrototypeOf(son, father);
+// console.log(Object.getPrototypeOf(son));
+
+// function ObjectFactory() {
+//   this.property = `hi, I'm a property`;
+// }
+// let obj = new ObjectFactory();
+// // console.log(typeof ObjectFactory.prototype);
+// // console.log(ObjectFactory.prototype.isPrototypeOf(obj));
+// // console.log(Object.getPrototypeOf(ObjectFactory));
+// // console.log(Object.getPrototypeOf(obj));
+
+// ObjectFactory.prototype.prop = `I'm a property of ObjectFactory.prototype`;
+
+// console.log(obj);
+// console.log(obj.prop);
+
+// const myObject = Object.create(Object.prototype);
+// console.log(myObject);
+// const literal = {};
+// console.log(literal);
+// const noProto = Object.create(null);
+// console.log(noProto);
+
+// const Car = function (color) {
+//   this.color = color;
+// };
+
+// Car.prototype = {
+//   getColor() {
+//     return this.color;
+//   },
+// };
+// const ToyCar = function () {};
+// ToyCar.prototype = Object.create(Car.prototype);
+// const legoCar = new ToyCar();
+// console.log(legoCar);
+// console.log(legoCar instanceof Car);
+// console.log(legoCar instanceof ToyCar);
+// console.log(legoCar instanceof Object);
+// console.log(Car.prototype.isPrototypeOf(legoCar));
+
+// function test() {
+//   console.log(this);
+// }
+// test();
+
+// const user = {
+//   firstName: "Patrick",
+//   lastName: "Scott",
+//   hobbies: ["programming", "piano"],
+//   listHobbies: function () {
+//     this.hobbies.forEach(function (hobby) {
+//       console.log(this.firstName);
+//       console.log(hobby);
+//     }, this);
+//   },
+// };
+
+// user.listHobbies();
+
+// function User(name) {
+//   this.name = name;
+//   console.log(this);
+// }
+// const newUser = new User("john");
