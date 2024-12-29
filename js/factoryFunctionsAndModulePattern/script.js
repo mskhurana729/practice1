@@ -561,5 +561,50 @@
 
 // Formatter.writeToDom("#target", "Hi there");
 
-var people = [];
-var template = $("");
+//Closure = A function with preserved data
+// Gives you access to an outer function's scope, from an inner function
+
+// State of variable in outer scope are 'saved'.
+// Variable in outer scope are considered 'private'
+
+// let score = (function () {
+//   let points = 0;
+//   return function () {
+//     points += 1;
+//     return points;
+//   };
+// })();
+// console.log(score());
+// console.log(score());
+// console.log(score());
+
+//COMPOSITION OVER INHERITANCE
+
+//YOU SHOULD AVOID INHERITANCE AND PREFER COMPOSITION FROM START AS IT PROVIDES MORE FREEDOM
+
+const barker = (state) => ({
+  bark: () => {
+    console.log("Woof, I am " + state.name);
+  },
+});
+const driver = (state) => ({
+  drive: () => (state.position = state.position + state.speed),
+});
+const killer = (state) => ({
+  kill: () => console.log(state.name + "killed"),
+});
+
+barker({ name: "karo" }).bark();
+
+const murderrobotDog = (name) => {
+  let state = {
+    name,
+    speed: 100,
+    position: 0,
+  };
+  return Object.assign({}, barker(state), driver(state), killer(state));
+};
+
+murderrobotDog("sniffles").bark();
+let sniffles = murderrobotDog("sniffles");
+sniffles.kill();
