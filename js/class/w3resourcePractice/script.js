@@ -127,22 +127,22 @@
 
 //solution
 
-class Employee {
-  constructor(name, salary) {
-    this.name = name;
-    this.salary = salary;
-  }
-  annualSalary() {
-    return this.salary * 12;
-  }
-}
-class Manager {
-  constructor(name, salary, department) {
-    super(name, salary);
-    this.department = department;
-  }
-  annualSalary(bonus = 500) {
-    let annualSalary = 12 * salary + bonus;
-    return annualSalary;
-  }
-}
+// class Employee {
+//   constructor(name, salary) {
+//     this.name = name;
+//     this.salary = salary;
+//   }
+//   annualSalary() {
+//     return this.salary * 12;
+//   }
+// }
+// class Manager {
+//   constructor(name, salary, department) {
+//     super(name, salary);
+//     this.department = department;
+//   }
+//   annualSalary(bonus = 500) {
+//     let annualSalary = 12 * salary + bonus;
+//     return annualSalary;
+//   }
+// }

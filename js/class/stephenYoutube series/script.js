@@ -60,18 +60,18 @@
 //extends and super
 //extends use is for inheritance and super is used to invoke parent method in which ever method you use super it will find the same method in parent class and will invoke it
 
-class Worker extends Person {
-  constructor(firstName, lastName, job) {
-    super(firstName, lastName);
-    this.job = job;
-    this.hasJob = true;
-  }
-  setJob(job) {
-    this.job = job;
-  }
-  getBiography() {
-    const bio = `${this.fullName} is a ${this.job}`.toUpperCase();
+// class Worker extends Person {
+//   constructor(firstName, lastName, job) {
+//     super(firstName, lastName);
+//     this.job = job;
+//     this.hasJob = true;
+//   }
+//   setJob(job) {
+//     this.job = job;
+//   }
+//   getBiography() {
+//     const bio = `${this.fullName} is a ${this.job}`.toUpperCase();
 
-    return bio;
-  }
-}
+//     return bio;
+//   }
+// }
