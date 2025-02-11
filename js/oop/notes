@@ -1,0 +1,3 @@
+Single responsibility
+As you craft your objects, one of the most important things to remember is the Single Responsibility Principle which states that a class (or object or module… you get the point) should only have one responsibility. This doesn’t mean that an object can only do one thing, but it does mean that everything an object does should be part of one responsibility.
+Another way to think about the Single Responsibility Principle is that a given method/class/component should have a single reason to change. Otherwise, if an object is trying to have multiple responsibilities, changing one aspect might affect another.
