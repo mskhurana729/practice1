@@ -4,44 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Api</title>
+    <script src="./index.js"></script>
   </head>
   <body>
     <input type="text" name="searchBox" id="searchBox" class="searchBox" />
 
     <button class="loadNewImage">Load New Image</button>
     <img src="" alt="" srcset="" />
-
-    <script>
-      const img = document.querySelector('img');
-      const loadNewImageButton = document.querySelector('.loadNewImage');
-      const searchBox = document.querySelector('.searchBox');
-      let defaultKey = 'cars';
-
-      async function fetchNewImage(key = defaultKey) {
-        await fetch(
-          `https://api.giphy.com/v1/gifs/translate?api_key=YEWLWoYZW3xakGDkT2dnMoiOXTFEzNzv&s=${key}`,
-          { mode: 'cors' }
-        )
-          .then(function (response) {
-            console.log(response.status, response.ok);
-            if (response.ok) {
-              throw new Error(response.status);
-            }
-            return response.json();
-          })
-          .then(function (response) {
-            img.src = response.data.images.original.url;
-          })
-          .catch((e) => {
-            console.log(e);
-            img.setAttribute('alt', `sorry no images with ${key}`);
-          });
-      }
-      loadNewImageButton.addEventListener('click', () => {
-        let key = searchBox.value;
-        fetchNewImage(key);
-        // previousKey = searchBox.value || previousKey;
-      });
-    </script>
   </body>
 </html>
