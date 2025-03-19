@@ -18,4 +18,16 @@ function binarySearch(arr,target){
     return -1;
 }
 let arr=[1,3,5,6,7,81,11];
-console.log(binarySearch(arr,5))
+
+
+function linearSearchForOrderedArray(arr,searchValue){
+    for(const [index,element] of arr.entries()){
+        if(element ===searchValue){
+            return index;
+        }else if(element>searchValue){
+            break;
+        }
+    }
+    return null;
+}
+console.log(linearSearchForOrderedArray(arr,4))
