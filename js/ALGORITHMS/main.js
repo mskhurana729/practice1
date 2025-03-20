@@ -31,3 +31,23 @@ function linearSearchForOrderedArray(arr,searchValue){
     return null;
 }
 console.log(linearSearchForOrderedArray(arr,4))
+
+//BUBBLE SORT
+
+function bubbleSort(arr){
+    let unsortedTillIndex = arr.length-1;
+    let sorted = false;
+
+    while(!sorted){
+        sorted = true;
+        for(let i  = 0 ;i<unsortedTillIndex;i++){
+            if(arr[i]>arr[i+1]){
+                [arr[i],arr[i+1]]=[arr[i+1],arr[i]];
+                sorted= false;
+            }
+        }
+        --unsortedTillIndex;
+    }
+    return arr;
+
+}
