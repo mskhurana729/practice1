@@ -1,53 +1,65 @@
-function binarySearch(arr,target){
-    let min = 0 ,max = arr.length-1;
-    console.log(max)
+function binarySearch(arr, target) {
+  let min = 0,
+    max = arr.length - 1;
+  console.log(max);
 
-    while(max>=min){
-        let guess = Math.floor((min+max)/2);
-        if(arr[guess]===target){
-            return guess;
-        }
-        if(arr[guess]<target){
-            min = guess+1;
-        }else{
-            max = guess -1;
-        }
-
-
+  while (max >= min) {
+    let guess = Math.floor((min + max) / 2);
+    if (arr[guess] === target) {
+      return guess;
     }
-    return -1;
-}
-let arr=[1,3,5,6,7,81,11];
-
-
-function linearSearchForOrderedArray(arr,searchValue){
-    for(const [index,element] of arr.entries()){
-        if(element ===searchValue){
-            return index;
-        }else if(element>searchValue){
-            break;
-        }
+    if (arr[guess] < target) {
+      min = guess + 1;
+    } else {
+      max = guess - 1;
     }
-    return null;
+  }
+  return -1;
 }
-console.log(linearSearchForOrderedArray(arr,4))
+let arr = [1, 3, 5, 6, 7, 81, 11];
+
+function linearSearchForOrderedArray(arr, searchValue) {
+  for (const [index, element] of arr.entries()) {
+    if (element === searchValue) {
+      return index;
+    } else if (element > searchValue) {
+      break;
+    }
+  }
+  return null;
+}
+console.log(linearSearchForOrderedArray(arr, 4));
 
 //BUBBLE SORT
 
-function bubbleSort(arr){
-    let unsortedTillIndex = arr.length-1;
-    let sorted = false;
+function bubbleSort(arr) {
+  let unsortedTillIndex = arr.length - 1;
+  let sorted = false;
 
-    while(!sorted){
-        sorted = true;
-        for(let i  = 0 ;i<unsortedTillIndex;i++){
-            if(arr[i]>arr[i+1]){
-                [arr[i],arr[i+1]]=[arr[i+1],arr[i]];
-                sorted= false;
-            }
-        }
-        --unsortedTillIndex;
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < unsortedTillIndex; i++) {
+      if (arr[i] > arr[i + 1]) {
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+        sorted = false;
+      }
     }
-    return arr;
+    --unsortedTillIndex;
+  }
+  return arr;
+}
 
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let lowestNumberIndex = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[i]) {
+        lowestNumberIndex = j;
+      }
+    }
+    if (lowestNumberIndex !== i) {
+      [arr[i], arr[lowestNumberIndex]] = [arr[lowestNumberIndex], arr[i]];
+    }
+  }
+  return arr;
 }
