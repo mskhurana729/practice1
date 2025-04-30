@@ -1,0 +1,11 @@
+{
+  "name": "mskhurana-queue",
+  "version": "1.0.0",
+  "description": "this contains queue data structure with functions enqueue, dequeue and read",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "license": "MIT"
+}

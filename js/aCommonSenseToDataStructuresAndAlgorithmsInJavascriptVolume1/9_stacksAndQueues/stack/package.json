@@ -1,0 +1,11 @@
+{
+  "name": "mskhurana-stack",
+  "version": "1.0.0",
+  "description": "contains stack data structure and function pop, push and read",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "license": "MIT"
+}

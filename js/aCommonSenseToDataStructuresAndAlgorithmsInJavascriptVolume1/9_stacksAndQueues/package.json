@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "9_stacksandqueues",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "mskhurana-queue": "^1.0.0",
+    "mskhurana-stack": "^1.0.0"
+  }
+}
