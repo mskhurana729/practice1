@@ -1,0 +1,11 @@
+{
+  "name": "mskhurana728-quicksort",
+  "version": "1.0.0",
+  "description": "this class has quickSort as well as quickSelect functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "license": "MIT"
+}
