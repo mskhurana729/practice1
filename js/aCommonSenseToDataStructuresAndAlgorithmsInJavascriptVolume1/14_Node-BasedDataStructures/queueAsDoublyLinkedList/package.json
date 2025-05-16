@@ -1,0 +1,15 @@
+{
+  "name": "mskhurana-queue",
+  "version": "1.0.0",
+  "description": "it has enqueue,dequeue and read methods",
+  "license": "MIT",
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "type": "module",
+  "main": "queue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mskhurana-doublylinkedlist": "^2.0.0"
+  }
+}

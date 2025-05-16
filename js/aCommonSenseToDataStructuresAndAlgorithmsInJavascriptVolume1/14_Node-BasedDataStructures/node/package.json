@@ -1,0 +1,12 @@
+{
+  "name": "mskhurana-node",
+  "version": "1.0.0",
+  "description": "it creates a node with attributes data and nextNode",
+  "license": "MIT",
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "type": "module",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

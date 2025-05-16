@@ -1,0 +1,15 @@
+{
+  "name": "mskhurana-doublylinkedlist",
+  "version": "2.0.0",
+  "description": "It has append and popHead methods",
+  "license": "MIT",
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "type": "module",
+  "main": "doublyLinkedList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mskhurana-doublylinkedlistnode": "^1.0.0"
+  }
+}

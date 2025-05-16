@@ -1,0 +1,12 @@
+{
+  "name": "mskhurana-doublylinkedlistnode",
+  "version": "2.0.0",
+  "description": "this node has data,nextNode and previousNode attributes",
+  "license": "MIT",
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "type": "module",
+  "main": "doublyLinkedListNode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
