@@ -4,10 +4,10 @@
   "description": "",
   "license": "MIT",
   "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch *.js"
   },
   "devDependencies": {
     "jest": "^30.0.4"
