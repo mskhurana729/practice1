@@ -1,5 +1,5 @@
-const orderTotal = require('./order-total');
-
+// const orderTotal = require('./order-total');
+import orderTotal from './order-total';
 it('Quantity', () => {
   expect(
     orderTotal({
