@@ -1,5 +1,24 @@
 {
+  "name": "practice1",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mskhurana728/practice1#readme",
+  "bugs": {
+    "url": "https://github.com/mskhurana728/practice1/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mskhurana728/practice1.git"
+  },
+  "license": "MIT",
+  "author": "Manpreet Singh Khurana <mskhurana729@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
+    "jest": "^30.0.4",
     "prettier": "^3.5.3"
   }
 }
