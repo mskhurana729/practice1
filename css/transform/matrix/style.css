@@ -1,0 +1,41 @@
+.withMatrix {
+  transform-origin: 0 0;
+  /* both does the same thing */
+  /* transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, 150, 0); */
+  /* transform: translate(150px, 0px) rotate(45deg); */
+
+  /* scaling the element */
+  /* transform: matrix(2, 0, 0, 2, 0, 0); */
+  /* transform: scale(2); */
+
+  /* matrix(a, b, c, d, e, f)
+Here's what they're for.
+
+a, d
+The arguments a and d represent how the element is scaled in the x and y direction respectively (just like in scale(a, d)).
+b, c
+The arguments b and c represent how the element is skewed (just like in skew(b, c)).
+e, f
+The arguments e and f represent how the element is translated in the x and y direction respectively (just like in translate(e, f)). */
+  padding: 20px;
+  width: 120px;
+  background: limegreen;
+  color: white;
+  font-family: sans-serif;
+}
+#myBox {
+  /* transform: translate(10px, 20px) rotate(10deg); */
+  transform: matrix(0.984808, 0.173648, -0.173648, 0.984808, 10, 20);
+  padding: 20px;
+  margin: 20px;
+  width: 120px;
+  background: limegreen;
+  color: white;
+  font-family: sans-serif;
+}
+output {
+  display: block;
+  font-family: monospace;
+  background: #eee;
+  padding: 20px;
+}

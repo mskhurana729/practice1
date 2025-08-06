@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix function</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="withMatrix">rotated and moved with <code>matrix()</code></div>
+    <div id="myBox">My Box</div>
+    <output id="output"></output>
+    <script>
+      var e = '';
+      var style = '';
+      e = document.getElementById('myBox');
+      style = window.getComputedStyle(e).getPropertyValue('transform');
+      document.getElementById('output').textContent = style;
+    </script>
+  </body>
+</html>
