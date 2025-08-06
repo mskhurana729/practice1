@@ -1,0 +1,214 @@
+#transition-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 2% 5% 2% 5%;
+  background-color: white;
+  color: white;
+  transition: background-color 1s ease-out 0.25s;
+  /*
+  transition: background-color 1s ease-out 0.25s;
+  this property is short hand for*/
+  /* transition-property: background-color;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+  transition-delay: 0.25s; */
+}
+button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.target {
+  font-size: 2rem;
+  background-color: palegoldenrod;
+  transition: background-color 2s 500ms;
+}
+.target:hover {
+  background-color: darkorange;
+}
+.target1 {
+  transition-property: background-color;
+  transition-duration: 1s;
+  background-color: #ccc;
+}
+.target1:hover,
+.target1:focus {
+  background-color: #eee;
+}
+/* transition duration */
+.box {
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  font-size: 18px;
+  transition: background-color, font-size, transform, color;
+  transition-timing-function: ease-in-out;
+}
+.transformed-state {
+  transform: rotate(270deg);
+  background-color: blue;
+  color: yellow;
+  font-size: 12px;
+  transition-property: background-color, font-size, transform, color;
+  transition-timing-function: ease-in-out;
+}
+.duration-1 {
+  transition-duration: 0.5s;
+}
+.duration-2 {
+  transition-duration: 2s;
+}
+.duration-3 {
+  transition-duration: 4s;
+}
+#change {
+  color: black;
+}
+/* transition timing function */
+.transition-timing-function-container {
+}
+.transition-timing-function-container > div {
+  width: 12em;
+  min-width: 12em;
+  margin-bottom: 4px;
+  background-color: black;
+  border: 1px solid red;
+  color: white;
+  transition-property: all;
+  transition-duration: 7s;
+}
+
+.transition-timing-function-container > div.box1 {
+  width: 90vw;
+  min-width: 24em;
+  background-color: magenta;
+  color: yellow;
+  border: 1px solid orange;
+  transition-property: all;
+  transition-duration: 2s;
+}
+
+.ease {
+  transition-timing-function: ease;
+}
+.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.ease-out {
+  transition-timing-function: ease-out;
+}
+.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+.linear {
+  transition-timing-function: linear;
+}
+.cubic-bezier {
+  transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
+}
+.jump-start {
+  transition-timing-function: steps(5, jump-start);
+}
+.jump-end {
+  transition-timing-function: steps(5, jump-end);
+}
+.jump-none {
+  transition-timing-function: steps(5, jump-none);
+}
+.jump-both {
+  transition-timing-function: steps(5, jump-both);
+}
+.step-start {
+  transition-timing-function: step-start;
+}
+.step-end {
+  transition-timing-function: step-end;
+}
+
+.playground > .box1 {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #0000ff;
+  transition:
+    width 2s,
+    height 2s,
+    background-color 2s,
+    rotate 2s;
+}
+.box1:hover {
+  background-color: #ffcccc;
+  width: 200px;
+  height: 200px;
+  rotate: 180deg;
+}
+.menu-container > nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.menu-container a {
+  flex: 1;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+.menu-container a:hover,
+.menu-container a:focus {
+  background-color: #fff;
+  color: #333;
+}
+
+.display-transition {
+  height: 100vh;
+}
+.display-none {
+  font-size: 1.6rem;
+  padding: 20px;
+  border: 3px solid red;
+  border-radius: 20px;
+  width: 480px;
+
+  display: none;
+  opacity: 0;
+  transition:
+    opacity 1s,
+    display 1s allow-discrete;
+}
+.showing {
+  opacity: 1;
+  display: block;
+}
+@starting-style {
+  .showing {
+    opacity: 0;
+  }
+}
+.ball {
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  background: #c00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+}
