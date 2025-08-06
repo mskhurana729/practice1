@@ -1,0 +1,235 @@
+body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+div,
+* + p {
+  margin-top: 1.5rem;
+}
+
+p {
+  margin: 24px 0px 16px;
+}
+
+img {
+  width: 60px;
+}
+/* two dimensional transforms */
+
+/* rotate */
+.element {
+  transform: rotate();
+}
+
+.rotate-by-deg {
+  transform: rotate(45deg);
+  div,
+  * + p {
+    margin-top: 1.5rem;
+  }
+}
+.rotate-by-turn {
+  transform: rotate(0.3turn);
+}
+.rotate-by-rad {
+  transform: rotate(-1rad);
+}
+/* scale */
+
+.element {
+  transform: scaleX();
+  transform: scaleY();
+  transform: scale();
+}
+
+.scaleX {
+  transform: scaleX(0.25);
+}
+.scaleY {
+  transform: scaleY(1.5);
+}
+.scaleXY {
+  transform: scale(0.25, 1.5);
+}
+.scale {
+  transform: scale(0.5);
+}
+
+/* skew */
+
+.element {
+  transform: skewX();
+  transform: skewY();
+  transform: skew();
+}
+.skewX {
+  transform: skewX(45deg);
+}
+.skewY {
+  transform: skewY(-0.5rad);
+}
+.skewXY {
+  transform: skew(45deg, -0.5rad);
+}
+.skew {
+  transform: skew(45deg);
+}
+.skews > div {
+  background: #cc9543;
+  width: 50px;
+  height: 50px;
+}
+
+.skews > div,
+* + p {
+  margin-top: 1.5rem;
+}
+
+/* translate */
+.element {
+  transform: translateX();
+  transform: translateY();
+  transform: translate();
+}
+
+.translateX {
+  transform: translateX(20px);
+}
+
+.translateY {
+  transform: translateY(-33%);
+}
+.translateXY {
+  transform: translate(20px, -33%);
+}
+
+.translates > div {
+  border: 1px solid black;
+  margin-right: auto;
+  padding: 24px;
+}
+
+.red-box,
+.blue-box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.red-box {
+  background: red;
+  transform: rotate(45deg) translate(200%);
+}
+.blue-box {
+  background: blue;
+  transform: translate(200%) rotate(45deg);
+}
+
+/* three dimensional transform */
+.element {
+  transform: perspective();
+}
+/* Essentially, by setting a perspective value, we are telling the object to render as if we were viewing it from a specific distance on the z-axis.
+
+Unlike other transform function values, perspective must be declared first (leftmost) when there are multiple transform function values. In the upcoming examples for rotate, scale, and translate, we will be able to see how it affects the target element. */
+
+/* rotate specific axis */
+.element {
+  transform: rotateX();
+  transform: rotateY();
+  transform: rotateZ();
+  transform: rotate3d();
+}
+
+.rotateX {
+  transform: rotateX(60deg);
+}
+.rotateY {
+  transform: rotateY(60deg);
+}
+.rotateZ {
+  transform: rotateZ(60deg);
+}
+
+/* scale specific axis */
+
+.element {
+  transform: scaleZ();
+  transform: scale3d();
+}
+
+/* .translate specific axis */
+
+.element {
+  transform: translateZ();
+  transform: translate3d();
+}
+
+.translate30 {
+  transform: perspective(100px) translateZ(30px);
+}
+.translate-100 {
+  transform: perspective(100px) translateZ(-100px);
+}
+.translate-200 {
+  transform: perspective(100px) translateZ(-200px);
+}
+
+/* Matrix */
+
+.element {
+  transform: matrix();
+  transform: matrix3d();
+}
+
+/* rotated3d */
+
+.rotated3d {
+  perspective: 800px;
+}
+.rotated3d > div {
+  width: 80px;
+  height: 80px;
+  background-color: skyblue;
+}
+.rotated {
+  /* transform: rotate3d(0, 1, 0, 60deg); */
+  transform: rotate3d(1, 2, -1, 192deg);
+}
+.rotate-3d-2 {
+  perspective: 400px;
+  /* transform: perspective(400px); for single element one time thing */
+  perspective-origin: 25% 75%;
+  /* transform: perspective(400px) rotateY(45deg); */
+}
+.rotated-2 {
+  transform: rotateY(45deg);
+  /* transform: rotate3d(1, 0, 0, 60deg); */
+  /* transform: rotate3d(0, 1, 0, 60deg); */
+  /* transform: rotate3d(0, 0, 1, 60deg); */
+  /* transform: rotate3d(1, 5, 1, 60deg); */
+  /* transform: rotate3d(1, -5, 1, -60deg); */
+  /* transform-origin: 90% 90%; */
+  /* transform: rotate3d(1, -5, 1, -60deg); */
+  /* transform: perspective(400px) rotateY(45deg); */
+  /* transform: rotateY(45deg); */
+}
+.rotate-3d-2 > div {
+  padding: 20px;
+  margin: 20px;
+  width: 120px;
+  background-color: limegreen;
+  color: white;
+  font-family: sans-serif;
+}
+.translate3d-2 > div {
+  width: 60px;
+  height: 60px;
+  background-color: skyblue;
+}
+.translate3d-2 > .moved {
+  /* transform: perspective(500px) translate3d(10px, 0, 0px); */
+  transform: perspective(500px) translate3d(10px, 0, 100px);
+  background-color: pink;
+}
