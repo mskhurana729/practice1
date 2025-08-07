@@ -212,3 +212,97 @@ button:hover {
   left: 0;
   transition: transform 1s;
 }
+.box2 {
+  width: 50px;
+  height: 50px;
+  border: 3px solid;
+  background: silver;
+}
+.box2 {
+  position: relative;
+}
+.first.box2 {
+  z-index: 2;
+  background-color: peachpuff;
+}
+.second.box2 {
+  z-index: 1;
+  margin-top: -20px;
+  margin-left: 20px;
+}
+body {
+  background: #eee;
+}
+header {
+  height: 60px;
+  line-height: 60px;
+  background: pink;
+  text-align: center;
+}
+main {
+  padding: 32px;
+}
+.tooltip {
+  top: -12px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  width: 90px;
+  text-align: center;
+  padding: 8px;
+  background: white;
+  box-shadow: 1px 2px 8px hsla(0deg, 0%, 0%, 0.25);
+  border-radius: 6px;
+}
+header {
+  position: relative;
+  z-index: 2;
+}
+.tooltip {
+  position: absolute;
+  z-index: 999999;
+}
+main {
+  position: relative;
+  /* will-change: transform;  this also creates a stacking context*/
+  /* z-index: 1;  this create main as different stacking context*/
+}
+
+/* Setting opacity to a value less than 1
+Setting position to fixed or sticky (No z-index needed for these values!)
+Applying a mix-blend-mode other than normal
+Adding a z-index to a child inside a display: flex or display: grid container
+Using transform, filter, clip-path, or perspective
+Using will-change with a value like opacity or transform
+Explicitly creating a context with isolation: isolate (More on this soon!) */
+
+/* A common misconception about z-index
+In order for z-index to work, we need to set position to something like relative or absolute, right?
+
+Not quite. Check out what's happening here: */
+.box3 {
+  width: 50px;
+  height: 50px;
+  border: 3px solid;
+  background: silver;
+}
+.wrapper {
+  display: flex;
+}
+.second.box3 {
+  z-index: 1;
+  background: hotpink;
+  margin-top: 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+/* Airtight abstractions with “isolation”
+One of my favourite CSS properties is also one of the most obscure. I'd like to introduce you to the isolation property, a hidden gem in the language.
+
+Here's how you'd use it:
+
+
+.wrapper {
+  isolation: isolate;
+}
+When we apply this declaration to an element, it does precisely 1 thing: it creates a new stacking context. */
