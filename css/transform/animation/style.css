@@ -1,0 +1,113 @@
+/* Move an element
+To move an element, use the translate or rotation keyword values of the transform property.
+
+For example, to slide an item into view, use translate. */
+/*
+body {
+  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  margin: 2em;
+}
+.container {
+  border: 4px solid #777;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  background-color: #165baa;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 0.5em;
+} */
+/* .animate {
+  animation:
+    slide-in 0.7s both,
+    rotate 0.7s ease-in-out both;
+} */
+
+/* @keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+/* .animate {
+  animation: slide-in 0.7s both;
+} */
+/* @keyframes slide-in {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+/* .animate {
+  animation: scale 1.5s both;
+}
+@keyframes scale {
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* .animate {
+  animation: opacity 2.5s both;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  margin: 5vh 5vw;
+}
+.container {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  height: 90vh;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: relative;
+}
+.box {
+  background-color: #000;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 5px;
+  box-shadow: 13px 10px 17px 0px rgba(0, 0, 0, 0.75);
+  animation: move 3s ease infinite;
+}
+@keyframes move {
+  50% {
+    transform: translate(calc(90vw - 200px), calc(90vh - 160px));
+  }
+}
