@@ -1,0 +1,32 @@
+body > div {
+  position: relative;
+  height: 100px;
+}
+div > div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  background-image: radial-gradient(
+    circle at 10px 10px,
+    rgb(25 255 255 / 80%),
+    rgb(25 255 255 / 40%)
+  );
+  border-radius: 50%;
+  top: 25px;
+  animation: 1.5s infinite alternate;
+}
+@keyframes move-right {
+  from {
+    left: 10%;
+  }
+  to {
+    left: 90%;
+  }
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
