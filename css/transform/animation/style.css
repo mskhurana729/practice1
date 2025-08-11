@@ -108,6 +108,6 @@ body {
 }
 @keyframes move {
   50% {
-    transform: translate(calc(90vw - 200px), calc(90vh - 160px));
+    transform: translate(calc(90vw - 200px), calc(90vh -160px));
   }
 }
