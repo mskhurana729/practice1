@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Resolution switching : Different Sizes
+
+        -->
+    <img src="...." alt="...    " />
+
+    <img
+      srcset="elva-480.jpg 480w, elva-800.jpg 800w"
+      sizes="(width<=600px) 480px, 800px"
+      src="elva-800.jpg"
+      alt="Elva dressed as a fairy"
+    />
+    <!-- Resolution switching: Same Size different resolutions -->
+
+    <img
+      srcset="elva-320w.jpg, elva--480w.jpg 1.5x, elva-640w.jpg 2x"
+      src="elva-640w.jpg"
+      alt="Elva dressed as a fairy"
+    />
+    <!-- Art direction -->
+    <!-- To recap, the art direction problem involves wanting to change the image displayed to suit different image display sizes. -->
+
+    <picture>
+      <source media="(width<800px)" srcset="'elva--480w.jpg" />
+      <source media="(width >=800px)" srcset="elva-800.jpg" />
+      <img src="elva-800w.jpg" alt="chris standing up holding his daughter" />
+    </picture>
+  </body>
+</html>
