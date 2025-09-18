@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <!-- Resolution switching : Different Sizes
@@ -34,5 +35,55 @@
     </picture>
     <!-- Art direction: The problem whereby you want to serve cropped images for different layouts — for example a landscape image showing a full scene for a desktop layout, and a portrait image showing the main subject zoomed in for a mobile layout. You can solve this problem using the <picture> element. -->
     <!-- Resolution switching: The problem whereby you want to serve smaller image files to narrow-screen devices, as they don't need huge images like desktop displays do — and to serve different resolution images to high density/low density screens. You can solve this problem using vector graphics (SVG images) and the srcset with sizes attributes. -->
-  </body>
+
+    <!-- Increase Performance -->
+
+    <img srcset="" src="" alt="" />
+
+    <!-- Design Control -->
+
+    <picture>
+      <source srcset="" media="" />
+      <source srcset="" media="" />
+      <img src="" alt="" />
+    </picture>
+
+    <!-- Perhaps the easiest-possible responsive images syntax is adding a srcset attribute with x descriptors on the images to label them for use on displays with different pixel-densities. -->
+
+    <img src="flowers.jpg" alt="flowers" srcset="flowers-highres.jpg 2x" />
+
+    <!-- You can do as many pixel-density variants as you like. -->
+
+    <img
+      src="flowers-lowres.jpg"
+      alt="flowers"
+      srcset="
+        flowers-high-1.jpg 1.5x,
+        flowers-high-2.jpg 2x,
+        flowers-high-3.jpg 3x
+      "
+    />
+    <!-- Using srcset / w + sizes
+This is the good stuff. This accounts for around 85% of responsive images usage on the web. We’re still serving the same image at multiple sizes, only we’re giving the browser more information so that it can adapt based on both pixel-density and layout size.
+
+ We’re still providing multiple copies of the same image and letting the browser pick the most appropriate one. But instead of labeling them with a pixel density (x) we’re labelling them with their resource width, using w descriptors. So if baby-s.jpg is 300×450, we label it as 300w.-->
+
+     <img
+       srcset="flowers-s.jpg 300w, flowers-m.jpg 600w, flowers-l.jpg 1200w"
+       sizes="70vmin"
+       src="flowers.jpg"
+       alt="flowers"
+     />
+
+     <div class="container1">
+       <img src="
+         src="https://res.cloudinary.com/css-tricks/image/upload/c_scale,f_auto,q_auto,w_600/v1586953415/kristina-paparo-gYZPVn09CrU-unsplash_qxhay3.jpg"" alt=""
+         srcset="https://res.cloudinary.com/css-tricks/image/upload/c_scale,f_auto,q_auto,w_320/v1586953415/kristina-paparo-gYZPVn09CrU-unsplash_qxhay3.jpg 320w,    https://res.cloudinary.com/css-tricks/image/upload/c_scale,f_auto,q_auto,w_600/v1586953415/kristina-paparo-gYZPVn09CrU-unsplash_qxhay3.jpg 600w,
+     https://res.cloudinary.com/css-tricks/image/upload/c_scale,f_auto,q_auto,w_1200/v1586953415/kristina-paparo-gYZPVn09CrU-unsplash_qxhay3.jpg 1200w,
+     https://res.cloudinary.com/css-tricks/image/upload/c_scale,f_auto,q_auto,w_2000/v1586953415/kristina-paparo-gYZPVn09CrU-unsplash_qxhay3.jpg 2000w
+
+         "  sizes="70vmin0"/>
+
+     </div>
+   </body>
 </html>
