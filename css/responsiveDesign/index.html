@@ -141,5 +141,32 @@ media="(min-width:600px)">
 srcset="baby-zoomed-out-2x.jpg 2x" src="baby-zoomed-out.jpg" alt="Baby sleeping">
     </picture>
 </div>
+
+<!-- Fallbacks for modern image formats -->
+<div class="container5">
+
+    <picture>
+        <source
+        srcset="party.webp"
+        >
+        <img src="party.jpg" alt="A huge party with cakes">
+    </picture>
+</div>
+<div class="container5">
+    <picture>
+  <source srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/cc-1800.webp" type="image/webp" />
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/cc-1800.jpg" alt="Chris Coyier">
+</picture>
+</div>
+<!-- This syntax supports all of the next gen image formats in one go -->
+
+<div class="container6">
+    <picture>
+        <source srcset="image.webp" type="image/webp">
+        <source srcset="image.jp2" type="image/jp2">
+<img src="image.jxr" type="image/vnd.ms-photo" alt="">
+    </picture>
+</div>
+
    </body>
 </html>
