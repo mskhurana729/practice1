@@ -135,3 +135,13 @@ img {
   }
 }
 /* What about responsive images in CSS with background images? */
+.img {
+  background-image: (url(small.jpg));
+}
+@media (min-width: 468px),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+  .img {
+    background-image: url(large.jpg);
+  }
+}
