@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    Responsive Images Done Right: A Guide To And srcset
+
+    <!-- The device-pixel-ratio Use Case #
+
+Say we have two versions of an image:
+
+small.jpg (320 × 240 pixels)
+large.jpg (640 × 480 pixels)
+We want to send large.jpg only to users with high-resolution screens. Using srcset, we’d mark up our image like so: -->
+
+    <img srcset="large.jpg 2x, small.jpg" src="small.jpg" alt="A red wolf" />
+
+    <!-- The Fluid- And Variable-Sized-Image Use Cases # -->
+
+    <!-- Let’s make this concrete by developing our previous example. Suppose we now have three versions of our image:
+
+large.jpg (1024 × 768 pixels)
+medium.jpg (640 × 480 pixels)
+small.jpg (320 × 240 pixels)
+And we want to place these in a flexible grid — a grid that starts out as a single column but switches to three columns in larger viewports, like this: -->
+
+    <img
+      srcset="large.jpg 1024w, medium.jpg 624w, small.jpg 320w"
+      sizes="(min-width:36em) 33.3vw, 100vw"
+      src="small.jpg"
+      alt="a red wolf"
+    />
+    <!-- One more thing. In our example, the size of the image is always a simple percentage of the viewport’s width. What if our layout combined both absolute and relative lengths by, say, adding a fixed 12-em sidebar to the three-column layout, like this? -->
+
+    <img
+      srcset="large.jpg 1024w, medium.jpg 624w, small.jpg 320w"
+      sizes="(min-width:36em) calc(.333*(100vw-12em)), 100vw"
+      src="small.jpg"
+      alt="a red wolf"
+    />
+    <!-- Let’s get back to our example. Suppose that instead of letting our image fill the full width of the viewport on small screens, we crop the image square, zooming in on the most important part of the subject, and present that small square crop at a fixed size floated off to the left, leaving a lot of space for descriptive text, like this:
+
+    To achieve this, we’ll need a couple of additional image sources:
+
+cropped-small.jpg (96 × 96 pixels)
+cropped-large.jpg (192 × 192 pixels)
+small.jpg (320 × 240 pixels)
+medium.jpg (640 × 480 pixels)
+large.jpg (1024 × 768 pixels)
+How do we mark them up? Like so:-->
+    <picture>
+      <source
+        media="(min-width:36em)"
+        srcset="large.jpg 1024w, medium.jpg 620w, small.jpg 320w"
+        sizes="33.3vw"
+      />
+      <source srcset="cropped-large.jpg 2x, cropped-small.jpg 1x" />
+      <img src="small.jpg" alt="A red wolf" />
+    </picture>
+    <!-- The Type-Switching Use Case #
+Let’s say that, instead of doing all of this squishing, stretching and adapting to myriad viewport conditions, we simply want to give a new file format a spin and provide a fallback for non-supporting browsers. For this, we follow the pattern established by audio and video: source type. -->
+
+    <picture>
+      <source type="image/webp" src="small.webp" />
+      <source type="image/png" src="small.png" />
+      <source type="image/" src="small.png" />
+      <img src="small.gif" alt="red wolf" />
+    </picture>
+  </body>
+</html>
