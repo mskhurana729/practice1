@@ -1,0 +1,27 @@
+/* Syntax */
+/* @media media type and (condition:breakpoint){
+    css rules
+} */
+
+/* Inside the parenthesis we set a condition */
+.text {
+  font-size: 14px;
+}
+@media (max-width: 480px) {
+  .text {
+    font-size: 16px;
+  }
+}
+/* Media types
+
+all
+print
+screen
+speech
+
+*/
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background: dodgerblue;
+  padding: 32px 64px;
+  font-size: 32px;
+  color: white;
+}
+main {
+  display: flex;
+  flex: 1;
+}
+aside {
+  width: 300px;
+  flex-shrink: 0;
+  background: palevioletred;
+  color: white;
+}
+li {
+  font-size: 24px;
+  list-style-type: none;
+}
+section {
+  padding: 16px;
+  margin: 16px;
+  font-size: 24px;
+  background: blanchedalmond;
+}
+footer {
+  height: 96px;
+  background: darkslateblue;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  header {
+    text-align: center;
+    padding: 24px;
+  }
+  aside {
+    width: auto;
+  }
+  ul {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+/*  */
+
+@media print {
+  /* print styles goes here */
+}
+/*You can target multiple devices  */
+@media screen, print {
+  /*  */
+}
+/* Targeting media features */
+@media (hover: hover) {
+  /*  */
+}
+/* Discrete features take their value from an enumerated set of possible keyword values. For example, the discrete orientation feature accepts either landscape or portrait. */
+@media print and (orientation: portrait) {
+  /*  */
+}
+
+/* If you create a media feature query without specifying a value, the nested styles will be used as long as the feature's value is not 0 or none. For example, this CSS will apply to any device with a color screen: */
+@media (color) {
+  /*  */
+}
+
+/*
+Combining multiple types of features
+ The and keyword combines a media feature with a media type or other media features. This example combines two media features to restrict styles to landscape-oriented devices with a width of at least 30 ems: */
+
+@media (width>=30em) and (orientation: landscape) {
+  /*  */
+}
+@media screen and (width>=30em) and (orientation: landscape) {
+}
+/* Testing for multiple queries */
+/* You can use a comma-separated list of media queries to apply styles when the user's device matches any one of various media types, features, or states. */
+/* The following rule contains two media queries. The block's styles will apply if either the user's device has a height of 680px or more or if the browser viewport is in portrait mode (the viewport height is greater than the viewport width):
+
+ */
+@media (height>=680px), screen and (orientation: portrait) {
+  /*  */
+}
+/* Inverting a query's meaning */
+/* The not keyword inverts the meaning of a single media query. For example, the CSS styles in this media query will apply to everything except printed media:
+
+ */
+@media not print {
+  /*  */
+}
+/* The not negates only the media query it is applied to. The not, without parenthesis, negates all the features within the media query in which it is contained. This means, in a comma-separated list of media queries, each not applies to the single query it is contained within, applying to all the features within that single query. In this example, the not applies to the first media query screen and (color), which concludes at the first comma:
+
+ */
+@media not screen and (color), print and (color) {
+}
+/* Because the query starts with a media type screen, you cannot wrap screen and (color) with parentheses. On the other hand, if your media query consists of features only, then you must parenthesize the query:
+
+ */
+@media not ((width>1000px) and (color)), print and (color) {
+  /*  */
+}
+/* not only negates the query to its right. In this example, we negate the hover media feature but not the screen media type:
+
+ */
+@media screen and not (hover) {
+  /*  */
+}
+
+/* Testing for multiple features with or */
+/* You can use or to test for a match among more than one feature, resolving to true if any of the features are true. For example, the following query tests for devices that have a monochrome display or hover capability: */
+
+@media (not (color)) or (hover) {
+  /* … */
+}
+/* Note that you cannot use the or operator on the same level as the and and not operators. You can either separate the media features with a comma or use parenthesis to group sub-expressions of media features to clarify the order of evaluation. */
+
+/* For example, the following queries are both valid: */
+
+@media ((color) and (hover)) or (monochrome) {
+  /* … */
+}
+
+/* or */
+@media (color) and (hover), (monochrome) {
+  /* … */
+}
